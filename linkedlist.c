@@ -43,8 +43,36 @@ int intInput(const char *message, bool newline) // function to take user input
     }
 }
 
+// Structure to be used as nodes or one 'element' of linked list
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
+
+// function to get a new node
+// takes a string input of what to print and returns a pointer to node
+Node* newNode(const char* message)  
+{
+    Node* temp = malloc(sizeof(Node));
+ 
+    temp->data = intInput(message, false);
+    temp->next = NULL;
+
+    return temp;
+}
+
+// function to print the given node, or list
+void print(Node* head)
+{
+    for (Node* temp = head; temp != NULL; temp = temp->next)
+        printf("%d -> ", temp->data);
+    printf("NULL\n");
+}
+
 int main(int argc, char *argv[])
 {
+
+    print(newNode("Enter a integer"));
     
     return 0;
 }
