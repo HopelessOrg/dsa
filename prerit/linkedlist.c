@@ -6,7 +6,7 @@
 /**
  * Documentation of this file
  * 
- * version: 1.0
+ * Current version: 1.1
  * created on: 12th nov, 2022
  * Author : Prerit Vishal
  * github: preritvishal
@@ -31,6 +31,9 @@
  * 
  * newlist() function, will not take input and return a pointer of Node type, which is a list
  * 
+ * 
+ * Version 1.1
+ *  print() now returns pointer to Node type for easy chaining of newlist() then print() then delete() functions
  */
 typedef enum bool
 {
@@ -69,18 +72,20 @@ Node *newNode(int val) // takes an integer input and puts the value in the data 
 }
 
 // function to print all nodes
-void print(Node *head)
+Node* print(Node *head)
 {
     if (!head)
     {
         printf("Empty!!\n");
-        return;
+        return head;
     }
 
     // starts from given node and prints the entire list
     for (Node *temp = head; temp; temp = temp->next)
         printf("%d -> ", temp->data);
     printf("NULL\n");
+
+    return head;
 }
 
 // function to delete the list
@@ -129,8 +134,6 @@ Node *newList()
 
 int main(int argc, char *argv[])    // the origin, the end, the main function
 {
-    Node* temp = newList();
-    print(temp);
-    delete(temp);
+    print(delete(print(newList())));
     return 0;
 }
