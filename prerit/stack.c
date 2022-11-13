@@ -84,6 +84,15 @@ Stack* pop(Stack* stk)  // fucntion to remove last element of stack
 
     Node* temp = stk->head;
     stk->head = temp->prev;
+    --stk->length;
+
+    free(temp);
+
+    if (stk->head == NULL)
+    {
+        free(stk);
+        stk->length = 0;
+    }
 
     return stk;
 }
@@ -105,9 +114,9 @@ Stack *print(Stack *stk) // function to print entire stack
 int main() // the beginning, the end, the main function
 {
     Stack *temp = newStack();
-    push(temp, 10);
-    print(temp);
-    pop(temp);
+    temp = push(temp, 10);
+    temp = print(temp);
+    temp = pop(temp);
     print(temp);
     // printf("length of stack : %d\n", temp->length);
 
