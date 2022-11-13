@@ -74,9 +74,23 @@ Stack *push(Stack *stk, int value)
     return stk;    // most important step, return the stack
 }
 
+Stack* pop(Stack* stk)  // fucntion to remove last element of stack
+{
+    if (!stk->head) // if stack head is empty
+    {
+        printf("Empty !!\n");
+        return stk;
+    }
+
+    Node* temp = stk->head;
+    stk->head = temp->prev;
+
+    return stk;
+}
+
 Stack *print(Stack *stk) // function to print entire stack
 {
-    if (!stk) // check if the stack is empty
+    if (!stk->head) // check if the stack is empty
     {
         printf("Empty !!\n");
         return stk;
@@ -92,8 +106,8 @@ int main() // the beginning, the end, the main function
 {
     Stack *temp = newStack();
     push(temp, 10);
-    push(temp, 20);
-    push(temp, 30);
+    print(temp);
+    pop(temp);
     print(temp);
     // printf("length of stack : %d\n", temp->length);
 
