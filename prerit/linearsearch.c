@@ -7,9 +7,10 @@ int intInput(const char* msg)
 {
     int temp;
 
-    if (msg)
+    if (msg)    // if there is any message provided, it will print and then wait for input
         printf("%s : ", msg);
-    
+
+    // if not, it will simply wait for input
     scanf("%d", &temp);
     return temp;
 }
@@ -17,13 +18,13 @@ int intInput(const char* msg)
 // function to perfrom linear search 
 int linearSearch(const int* list, int size, int key)
 {
-    for (int i = 0; i < size; ++i)
+    for (int i = 0; i < size; ++i)  // iterate from 0 to size - 1 to find the key
         if (key == list[i])
-            return i;
-    return -1;
+            return i;   // if found, it will return the index of they element
+    return -1;  // if not found, it will return -1, indicating item not found
 }
 
-int main()
+int main()  // the origin, the end, the main function
 {
     int array[SIZE];
     int size = intInput("Enter the size of array");
