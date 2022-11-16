@@ -11,7 +11,27 @@
  *  github: preritvishal
  *  email: preritvishal3@gmail.com
  *
- *
+ *  bool is an enum, used to add and simplify the boolean in C
+ * 
+ *  Node is a structure which is used as each stack frame that contains data, and two pointers of Node type
+ * 
+ *  Stack is a wrapper based on Node, which keep the top of stack and it's length
+ * 
+ *  newNode function takes in int value and returns a Node type pointer to newly created and initilialzed node
+ *      default value of both Node pointers is NULL
+ *      default value of int is provided value
+ * 
+ *  newStack function takes no input and return a pointer of Stack type 
+ *      default value of head pointer of Node type is NULL
+ *      default value of length is 0
+ * 
+ *  push function takes in a pointer of Stack type and a value, adds the value in stack and returns a pointer 
+ *      of Stack type with updated values
+ * 
+ *  pop function takes in a pointer of Stack type, removes the latest entry in stack and retuns the updated Stack pointer
+ * 
+ *  print function takes in a pointer of Stack type, prints the entire stack and returns a pointer of Stack type of same 
+ *      Stack, it is nostly useful in chaining it with other functionalities
  */
 
 // enum to use boolean values, instead of 0 amd 1
@@ -116,15 +136,15 @@ Stack *print(Stack *stk) // function to print entire stack
 
 int main() // the beginning, the end, the main function
 {
-    Stack *temp = newStack();
-    temp = push(temp, 10);
-    temp = push(temp, 20);
-    temp = print(temp);
+    // Stack *temp = newStack();
+    // temp = push(temp, 10);
+    // temp = push(temp, 20);
+    // temp = print(temp);
 
-    temp = pop(temp);
-    temp = print(temp);
-    temp = pop(temp);
-    temp = print(temp);
+    // temp = pop(temp);
+    // temp = print(temp);
+    // temp = pop(temp);
+    // temp = print(temp);
     // printf("length of stack : %d\n", temp->length);
 
     return 0;
