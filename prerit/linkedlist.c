@@ -132,36 +132,8 @@ Node *newList()
     }
 }
 
-// function to search a data in the list
-Node* search(Node* head, int value)
-{
-    if (!head)
-    {
-        printf("Empty !!");
-        return head;
-    }
-
-    for (Node* temp = head; temp; temp = temp->next)
-        if (temp->data == value)
-            return temp;
-    return NULL;
-}
-
-// function ot print just one node
-Node* print_one(Node* head)
-{
-    if (!head)
-    {   
-        printf("Empty !!");
-        return head;
-    }
-
-    printf("Current node: %d\n", head->data);
-    return head;
-}
-
 int main(int argc, char *argv[])    // the origin, the end, the main function
 {
-    print_one(search(newList(), 10));
+    print(delete(print(newList())));
     return 0;
 }
