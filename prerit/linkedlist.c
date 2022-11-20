@@ -71,14 +71,19 @@ Node *newNode(int val) // takes an integer input and puts the value in the data 
     return temp;
 }
 
+// function to check see if list is empty
+bool isEmpty(Node* head, bool printTxt)
+{
+    if (printTxt && head == NULL)
+        printf("Empty!!\n");
+    return head == NULL;
+}
+
 // function to print all nodes
 Node* print(Node *head)
 {
-    if (!head)
-    {
-        printf("Empty!!\n");
+    if (isEmpty(head, true))
         return head;
-    }
 
     // starts from given node and prints the entire list
     for (Node *temp = head; temp; temp = temp->next)
@@ -130,6 +135,12 @@ Node *newList()
             current = current->next;
         }
     }
+}
+
+// function to seacch a node in list
+Node* serach(Node* head, int value)
+{
+    
 }
 
 int main(int argc, char *argv[])    // the origin, the end, the main function
