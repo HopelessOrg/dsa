@@ -6,9 +6,7 @@
 ../*.exe
 ../*-ignore.*
 
-../*-ssh-*.*
-*-ssh-*.*
+../*.pub
+*.pub
 
-../*-ssh-key
-*-ssh-key.*
 
