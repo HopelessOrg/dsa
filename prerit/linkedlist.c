@@ -135,7 +135,7 @@ Node *newList()
 }
 
 // function to seacch a node in list
-Node* serach(Node* head, int value)
+Node* search(Node* head, int value)
 {
     if (isEmpty(head, true))    // if head is empty, print empty and return the head
         return head;
@@ -151,6 +151,10 @@ Node* serach(Node* head, int value)
 
 int main(int argc, char *argv[])    // the origin, the end, the main function
 {
-    print(delete(print(newList())));
+    Node* temp = newList();
+    print(temp);
+
+    print(search(temp, 30));
+    delete(temp);
     return 0;
 }
