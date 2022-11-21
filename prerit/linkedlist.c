@@ -96,11 +96,8 @@ Node* print(Node *head)
 // function to delete the list
 Node *delete (Node *head)
 {
-    if (!head)
-    {
-        printf("Empty!!\n");
+    if (isEmpty(head, true))
         return head;
-    }
 
     // it starts from given node and deletes entite list
     for (Node *temp = head; temp; temp = head)
@@ -140,7 +137,16 @@ Node *newList()
 // function to seacch a node in list
 Node* serach(Node* head, int value)
 {
+    if (isEmpty(head, true))    // if head is empty, print empty and return the head
+        return head;
     
+    for (Node* temp = head; temp; temp = temp->next)    // if not, search for the value, and if found, return the Node containing the value
+        if (temp->data == value)
+            return temp;
+    
+    printf("Value not found !!\n"); // if not found, print and return the head of the list
+    return head;
+
 }
 
 int main(int argc, char *argv[])    // the origin, the end, the main function
